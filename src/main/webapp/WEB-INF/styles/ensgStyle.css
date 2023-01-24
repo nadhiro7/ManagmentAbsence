@@ -1,0 +1,267 @@
+@charset "ISO-8859-1";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
+  transition: 0.5s;
+}
+:root {
+  --prColor: #43a047;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* style for the Add */
+.add .container {
+  margin: 50px auto 30px auto;
+  height: max-content;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.535);
+  border-radius: 7px;
+  padding: 10px;
+}
+.add {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+/* Button component */
+.form-Button {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  border: 1px solid var(--prColor);
+  border-radius: 7px;
+  background-color: transparent;
+  position: relative;
+  z-index: 5;
+  transition-delay: 0.3s;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+}
+.form-Button::after {
+  content: "";
+  height: 100%;
+  background-color: var(--prColor);
+  width: 0%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 7px 0 0 7px;
+  z-index: -1;
+  transition: 0.5s;
+}
+.form-Button::before {
+  content: "";
+  height: 100%;
+  background-color: var(--prColor);
+  width: 0%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0px 7px 7px 0px;
+  z-index: -1;
+  transition: 0.5s;
+}
+.form-Button:hover::before,
+.form-Button:hover::after {
+  width: 50%;
+}
+.form-Button:hover {
+  color: #fff;
+}
+/* session  */
+.sessions {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sessions h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: #43a047;
+  width: 100%;
+}
+.sessionCard {
+  flex-basis: 200px;
+  height: 70px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #43a047;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.sessionCard > div:first-child {
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #43a047;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.sessionCard > div:last-of-type {
+  width: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding-left: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#hs {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+/* add project  */
+.addSession {
+  height: fit-content;
+  background-color: #fff;
+  box-shadow: 2px 3px 35px rgba(0, 0, 0, 0.6);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.addSession h2 {
+  font-size: 25px;
+  color: var(--prColor);
+}
+.addSession form {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.addSession form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: fit-content;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.addSession form div input {
+  margin-top: 5px;
+  height: 40px;
+  border: 1px solid var(--prColor);
+  border-radius: 7px;
+  font-size: 17px;
+  font-weight: 600;
+  padding-left: 7px;
+}
+:focus {
+  outline: none;
+  padding-left: 7px;
+  font-size: 17px;
+  font-weight: 600;
+}
+.choose {
+  height: 200px !important;
+  border: 1px dashed var(--brBtn);
+  position: relative;
+}
+.choose label {
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.choose input {
+  visibility: hidden;
+  height: 0;
+}
+.addSession form button {
+  height: 45px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--prColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--prColor);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.addSession form button:hover {
+  background-color: var(--prColor);
+  text-shadow: 0px 0px 2px #fff;
+  color: #fff;
+}
+.addSession > i:first-child {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 23px;
+  color: var(--prColor);
+  cursor: pointer;
+}
+/* responsive */
+@media screen and (max-width: 600px) {
+}
+@media screen and (min-width: 601px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 920px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 920px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    width: 1370px;
+  }
+}

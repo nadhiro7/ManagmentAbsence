@@ -1,0 +1,20 @@
+
+body {
+    min-height: 120vh !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: column !important;
+}
+.login-box input{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 7px;
+}
+.login-box {
+    height: max-content !important;
+    margin-top: 50px !important;
+}

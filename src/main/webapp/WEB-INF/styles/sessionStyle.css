@@ -1,0 +1,115 @@
+@charset "ISO-8859-1";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
+}
+:root {
+  --prColor: #43a047;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+}
+
+/* style for the list */
+.liste {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.liste h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+.liste .tab {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 20px;
+}
+.liste .tab .row {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  padding: 10px;
+  background-color: #e9e9e9;
+  position: relative;
+}
+.liste .tab .row .column:first-child {
+  flex-basis: 30px;
+}
+.liste .tab .row .column,form {
+  flex-basis: 150px;
+}
+.liste .tab .row:not(:first-child) {
+  font-size: 17px;
+}
+form{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.liste .tab .row.header {
+  background-color: var(--prColor);
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+form button {
+	cursor: pointer;
+  font-size: 20px;
+ border: none;
+  color: var(--prColor);
+}
+.choice {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+.choice .role {
+  font-size: 15px;
+  color: #4caf50;
+  cursor: pointer;
+  font-weight: bold;
+}
+.choice #role:hover {
+  color: #43a047;
+}
+.choice #role:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #4caf50;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.choice #role:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #4caf50;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.choice #role:hover:after {
+  border-left: 10px solid #43a047;
+}
+.choice #role:hover:before {
+  border-left: 10px solid #43a047;
+}

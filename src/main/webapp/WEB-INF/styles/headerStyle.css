@@ -1,0 +1,426 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
+}
+:root {
+  --prColor: #43a047;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px #000000aa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+nav .logo img {
+  width: 48px;
+  height: 43px;
+}
+nav .logo p {
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 7px;
+  color: var(--prColor);
+}
+
+nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px !important;
+  margin-left: 20px;
+}
+nav > ul li a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  color: #000;
+}
+nav > ul li .active {
+  color: var(--prColor) !important;
+}
+nav > ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  box-sizing: border-box;
+  background: var(--prColor);
+  margin: auto;
+  transition: all 0.5s ease 0s;
+  font-size: 20px;
+}
+nav > ul li .active::after {
+  width: 100% !important;
+}
+nav > ul li a:hover:after {
+  width: 100%;
+}
+nav > ul li a:hover {
+  color: var(--prColor);
+}
+.profile {
+  width: 200px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  margin-top: 3px;
+  align-items: center;
+}
+.profile div {
+  width: 100%;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #e4e4e4;
+  background-color: #ededed;
+  padding-left: 5px;
+  border-radius: 21.5px;
+  cursor: pointer;
+}
+.profile img {
+  width: 40px;
+  height: 35px;
+  border-radius: 50%;
+}
+.profile p {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 10px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  width: 100%;
+}
+.profile:hover p {
+  color: var(--prColor);
+}
+.profile ul {
+  width: 100%;
+  flex-direction: column;
+  list-style: none;
+  background-color: #ededed;
+  margin: 8px;
+  border-radius: 10px;
+  position: relative;
+  display: none;
+}
+.profile ul::before {
+  content: "";
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  top: -7px;
+  border-width: 8px;
+  top: -17px;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-color: transparent transparent #ededed transparent;
+}
+.profile ul li {
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+.profile ul li a {
+  height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  position: absolute;
+  padding-top: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+}
+.profile ul li button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+}
+.profile div:hover + ul,
+.profile ul:hover,
+.profile:hover {
+  display: flex;
+}
+.profile ul li a:hover,
+.profile ul li button:hover {
+  text-decoration: underline;
+  color: var(--prColor);
+}
+nav > i {
+  display: none !important;
+}
+/* responsive */
+@media screen and (max-width: 600px) {
+  nav i {
+    display: flex !important;
+    align-items: center;
+  }
+  nav > .fa {
+    font-size: 23px;
+    color: var(--prColor);
+  }
+  nav > ul {
+    display: none;
+    position: absolute;
+    top: 47px;
+    flex-direction: column;
+    height: 140px;
+    align-items: flex-start;
+    margin-left: auto;
+    width: 100% !important;
+    background: #fff;
+    left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  nav > ul li {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--brBtn);
+  }
+  nav > ul li a {
+    width: fit-content;
+  }
+  nav .logo p {
+    font-size: 13px;
+  }
+  .profile {
+    display: none;
+    position: absolute;
+    top: 200px;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 1px 3px 0px #000000aa;
+  }
+  .profile img {
+    width: 34px;
+    height: 30px;
+  }
+  .profile div {
+    padding-left: 0;
+    justify-content: center;
+    background-color: #fff;
+    border: none;
+  }
+  .profile ul {
+    width: 97%;
+  }
+  .profile ul li {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile ul li a,
+  .profile ul li button {
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    width: fit-content;
+    display: contents;
+  }
+  .profile ul li button .fa {
+    font-size: 15px;
+    margin-right: 5px;
+  }
+  nav .logo img {
+    width: 35px;
+    height: 34px;
+  }
+  nav {
+    height: 45px;
+  }
+  nav > ul li a {
+    font-size: 14px;
+  }
+  .profile div p {
+    font-size: 14px;
+  }
+  .vsb {
+    display: flex;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 767px) {
+  nav i {
+    display: flex !important;
+    align-items: center;
+  }
+  nav > .fa {
+    font-size: 23px;
+    color: var(--prColor);
+  }
+  nav > ul {
+    display: none;
+    position: absolute;
+    top: 47px;
+    flex-direction: column;
+    height: 140px;
+    align-items: flex-start;
+    margin-left: auto;
+    width: 100% !important;
+    background: #fff;
+    left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  nav > ul li {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--brBtn);
+  }
+  nav > ul li a {
+    width: fit-content;
+  }
+  nav .logo p {
+    font-size: 17px;
+  }
+  .profile {
+    display: none;
+    position: absolute;
+    top: 200px;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 1px 3px 0px #000000aa;
+  }
+  .profile img {
+    width: 34px;
+    height: 30px;
+  }
+  .profile div {
+    padding-left: 0;
+    justify-content: center;
+    background-color: #fff;
+    border: none;
+  }
+  .profile ul {
+    width: 97%;
+  }
+  .profile ul li {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile ul li a,
+  .profile ul li button {
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    width: fit-content;
+    display: contents;
+  }
+  .profile ul li button .fa {
+    font-size: 15px;
+    margin-right: 5px;
+  }
+  nav .logo img {
+    width: 35px;
+    height: 34px;
+  }
+  nav {
+    height: 45px;
+  }
+  nav > ul li a {
+    font-size: 14px;
+  }
+  .profile div p {
+    font-size: 14px;
+  }
+  .vsb {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  nav .logo p {
+    font-size: 16px;
+  }
+  nav > ul li a {
+    font-size: 13px;
+  }
+  nav > ul {
+    width: 270px;
+  }
+  .profile p {
+    font-size: 13px;
+  }
+  .profile img {
+    width: 37px;
+    height: 33px;
+  }
+  .profile {
+    width: 175px;
+  }
+  .profile ul li a,
+  .profile ul li button {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+  nav .logo p {
+    font-size: 18px;
+  }
+  nav > ul li a {
+    font-size: 15px;
+  }
+  nav > ul {
+    width: 340px;
+  }
+  .profile p {
+    font-size: 15px;
+  }
+  .profile img {
+    width: 37px;
+    height: 33px;
+  }
+  .profile {
+    width: 175px;
+  }
+  .profile ul li a,
+  .profile ul li button {
+    font-size: 15px;
+  }
+}
